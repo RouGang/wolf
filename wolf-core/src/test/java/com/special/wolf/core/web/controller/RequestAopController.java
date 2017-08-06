@@ -137,7 +137,7 @@ public class RequestAopController {
   }
 
   @RequestMapping(value = "/postParamMapRequestStream", method = RequestMethod.POST)
-  public BaseResult postParamMapRequestStream(@RequestBody Map<String, Object> map) {
+  public BaseResult postParamMapRequestStream(HttpServletRequest request,@RequestBody Map<String, Object> map) {
     return BaseResult.ok(map);
   }
 

@@ -25,8 +25,8 @@ public class ReuqestCoreGetTest extends RequestCoreTest {
    */
   @Test
   public void getParamRequest() throws Exception {
-    this.mockMvc.perform(get("/getParamRequest").param("name", "黄柔刚")
-        .param("age", "30").characterEncoding(ENCODING_UTF8)).andDo(print())
+    this.mockMvc.perform(get("/getParamRequest"+String.format("?name=%s&age=%d","黄柔刚",30))
+        .characterEncoding(ENCODING_UTF8)).andDo(print())
         .andExpect(status().isOk())
         .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
         .andExpect(jsonPath("$.code", is(0)))
@@ -39,8 +39,8 @@ public class ReuqestCoreGetTest extends RequestCoreTest {
    */
   @Test
   public void getParamMapRequest() throws Exception {
-    this.mockMvc.perform(get("/getParamMapRequest").param("name", "黄柔刚")
-        .param("age", "30").characterEncoding(ENCODING_UTF8)).andDo(print())
+    this.mockMvc.perform(get("/getParamMapRequest"+String.format("?name=%s&age=%d","黄柔刚",30))
+        .characterEncoding(ENCODING_UTF8)).andDo(print())
         .andExpect(status().isOk())
         .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
         .andExpect(jsonPath("$.code", is(0)))
@@ -53,8 +53,8 @@ public class ReuqestCoreGetTest extends RequestCoreTest {
    */
   @Test
   public void getParamBeanpRequest() throws Exception {
-    this.mockMvc.perform(get("/getParamBeanpRequest").param("name", "黄柔刚")
-        .param("age", "30").characterEncoding(ENCODING_UTF8)).andDo(print())
+    this.mockMvc.perform(get("/getParamBeanpRequest"+String.format("?name=%s&age=%d","黄柔刚",30))
+        .characterEncoding(ENCODING_UTF8)).andDo(print())
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.code", is(-1)))
         .andReturn();
@@ -65,8 +65,8 @@ public class ReuqestCoreGetTest extends RequestCoreTest {
    */
   @Test
   public void getParamRequestNo() throws Exception {
-    this.mockMvc.perform(get("/getParamRequestNo").param("name", "黄柔刚")
-        .param("age", "30").characterEncoding(ENCODING_UTF8)).andDo(print())
+    this.mockMvc.perform(get("/getParamRequestNo"+String.format("?name=%s&age=%d","黄柔刚",30))
+        .characterEncoding(ENCODING_UTF8)).andDo(print())
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.code", is(0)))
         .andExpect(jsonPath("$.data.name", is("黄柔刚")))
@@ -78,8 +78,8 @@ public class ReuqestCoreGetTest extends RequestCoreTest {
    */
   @Test()
   public void getParamMapRequestNo() throws Exception {
-    this.mockMvc.perform(get("/getParamMapRequestNo").param("name", "黄柔刚")
-        .param("age", "30").characterEncoding(ENCODING_UTF8)).andDo(print())
+    this.mockMvc.perform(get("/getParamMapRequestNo"+String.format("?name=%s&age=%d","黄柔刚",30))
+        .characterEncoding(ENCODING_UTF8)).andDo(print())
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.code", is(ErrorCode.EMPTY_ERROR_CODE.errorCode())))
         .andReturn();
@@ -90,8 +90,8 @@ public class ReuqestCoreGetTest extends RequestCoreTest {
    */
   @Test
   public void getParamBeanpRequestNo() throws Exception {
-    this.mockMvc.perform(get("/getParamBeanpRequest").param("name", "黄柔刚")
-        .param("age", "30").characterEncoding(ENCODING_UTF8)).andDo(print())
+    this.mockMvc.perform(get("/getParamBeanpRequest"+String.format("?name=%s&age=%d","黄柔刚",30))
+        .characterEncoding(ENCODING_UTF8)).andDo(print())
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.code", is(-1)))
         .andReturn();
@@ -103,8 +103,8 @@ public class ReuqestCoreGetTest extends RequestCoreTest {
    */
   @Test
   public void getParamBeanRequestModelAttribute() throws Exception {
-    this.mockMvc.perform(get("/getParamBeanRequestModelAttribute").param("name", "黄柔刚")
-        .param("age", "30").characterEncoding(ENCODING_UTF8)).andDo(print())
+    this.mockMvc.perform(get("/getParamBeanRequestModelAttribute"+String.format("?name=%s&age=%d","黄柔刚",30))
+        .characterEncoding(ENCODING_UTF8)).andDo(print())
         .andExpect(status().isOk())
         .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
         .andExpect(jsonPath("$.code", is(0)))
