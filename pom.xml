@@ -19,6 +19,7 @@
     <module>wolf-samples</module>
     <module>wolf-starters</module>
     <module>wolf-parent</module>
+    <module>wolf-core</module>
   </modules>
 
 
